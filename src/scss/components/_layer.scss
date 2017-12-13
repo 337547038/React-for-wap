@@ -1,0 +1,21 @@
+@charset "utf-8";
+@import "../_config";
+.ucs-layer{ position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 999;
+  .ucs-box{ width: 80%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); //添加多一个div主要是实现垂直居中和动画，同一个divtransform: translate(-50%, -50%)跟动画效果会有冲突
+  }
+  .ucs-layer-body{ background: #fff; border-radius: 5px; box-shadow: 1px 1px 20px rgba(0, 0, 0, .3); overflow: hidden; animation-duration: .3s; }
+  .ucs-layer-close{ right: 10px; top: 10px; position: absolute;
+    &:after{ content: '×'; display: block; font-size: 18px; }
+  }
+  .ucs-auto-close{ right: 10px; bottom: 10px; position: absolute }
+  .ucs-layer-header{ @include height(30); padding-left: 20px; background: #f60; border-top-left-radius: 5px; border-top-right-radius: 5px; }
+  .ucs-layer-content{ padding: 10px;
+    .ucs-layer-text{ text-align: center; }
+    .ucs-layer-success{ }
+    .ucs-layer-failure{ }
+  }
+  .ucs-layer-footer{ text-align: center; margin-bottom: 20px;
+    input{ margin: 0 10px; }
+  }
+}
+@import "_layerAnimation";

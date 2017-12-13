@@ -1,0 +1,14 @@
+@charset "utf-8";
+@import "../_config";
+.form-group{ @include height(nth($form-group, 1)); margin-bottom: px(nth($form-group, 2)); position: relative;
+  &:after{ @include clear() }
+  &.auto-height{ height: auto; line-height: normal; }
+  div.input-control{ line-height: px(nth($form-group, 1)-2) }
+  .label{ width: px(215); display: block; box-sizing: border-box; position: absolute; left: 0; top: 0;
+    span{ color: $color-red; }
+  }
+  .form-box{ position: relative; margin-left: px(220);
+    .input-text{ }
+    .unit{ right: px(5); top: 0; position: absolute; }
+  }
+}

@@ -1,0 +1,7 @@
+@charset "utf-8";
+@import "../_config";
+.input-control{
+  height: px(nth($form-group, 1)-2); box-sizing: border-box; width: 100%; padding: 0 px(10); font-size: nth($global-input, 4); background: nth($global-input, 1); border: 1px solid nth($global-input, 2); color: nth($global-input, 2);
+  &:disabled{ cursor: not-allowed; background: #eee; }
+  &:focus{ border-color: nth($global-input, 5); }
+}

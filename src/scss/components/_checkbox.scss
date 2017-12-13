@@ -1,0 +1,25 @@
+@charset "utf-8";
+@import "../_config";
+.ucs-checkbox{
+  $border: #666; //边框颜色
+  $checked: #f60; //选中颜色
+  $disabled: #999; //禁用颜色
+  $radius: 10px; //宽高
+  display: inline-block; vertical-align: middle; cursor: pointer;
+  span{ display: inline-block; vertical-align: middle; }
+  input{ display: none;
+    &:checked + .ucs-checkbox-inner{ border: 1px solid $checked; cursor: pointer;
+      &:after{ opacity: 1; transform: scale(1); color: $checked }
+    }
+    &:disabled + .ucs-checkbox-inner{ border: 1px solid $disabled; cursor: not-allowed;
+      &:after{ opacity: 1; transform: scale(1); background: $disabled; color: #ccc }
+    }
+  }
+  .ucs-checkbox-inner{ border: 1px solid $border; width: $radius; height: $radius; line-height: $radius; margin-right: 5px; position: relative; text-align: center;
+    &:after{ content: '\2714'; display: block; opacity: 0; transition: all .5s; transform: scale(0); }
+  }
+  .ucs-checkbox-text{ }
+}
+.ucs-checkbox-group{
+  .ucs-checkbox{ margin-right: px(20) }
+}

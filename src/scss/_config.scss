@@ -1,0 +1,32 @@
+@charset "utf-8";
+$pw: 750/10; //设计稿宽1/10
+@function px($n:0) {
+  @return $n / $pw + rem;
+}
+@mixin font-dpr($font-size) {
+  font-size: $font-size;
+  [data-dpr="2"] &{
+    font-size: $font-size * 2;
+  }
+  [data-dpr="3"] &{
+    font-size: $font-size * 3;
+  }
+}
+//设置beckground-size
+@function bg-size($w,$h) {
+  @return $w / $pw + rem $h / $pw + rem;
+}
+@mixin clear() { display: block; content: '.'; clear: both; height: 0; line-height: 0; visibility: hidden; }
+@mixin height($h) { height: px($h); line-height: px($h); }
+$global-font-family: Arial, "Microsoft YaHei", "simsun"; //全局字体
+$border: #ddd;
+$color-black3: #333;
+$color-gray: #999;
+$color-black6: #666;
+$color-yellow: #ffc000;
+$color-red: #ce1010;
+$global-placeholder: #999;
+//*input*/
+//form-group的高 距底距离
+$form-group:88 30;
+$global-input: #fff #e2e2e2 #666 14px #c11920; //1背影颜色 2边框颜色 3字体颜色 4字体大小 5输入框焦点边框颜色

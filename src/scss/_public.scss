@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import "_config";
+html, body, div, span, table, tbody, tr, th, td, em, img, strong, h1, h2, h3, h4, h5, h6, p, a, dl, dt, dd, ol, ul, li, form, label, input{ margin: 0; padding: 0; list-style: none; outline: none; }
+h1, h2, h3, h4, h5, h6, b{ font-weight: 400; }
+a, img{ border: none }
+html, body{
+  position: relative;
+}
+input,select,textarea{
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+}
+body{ font-family: $global-font-family; color: #666; font-size: 14px; background: #eee; }
+a{ color: #666; font-size: 14px;
+  &:link{ text-decoration: none; }
+  &:visited{ text-decoration: none; color: #666; }
+  &:hover{ text-decoration: none; color: #333; }
+  &:active{ text-decoration: none; color: #666; }
+}
+//input placeholder默认颜色，仅对高版本浏览器
+// WebKit browsers
+::-webkit-input-placeholder{ color: $global-placeholder; }
+// Mozilla Firefox 4 to 18 */
+:-moz-placeholder{ color: $global-placeholder; opacity: 1; }
+// Mozilla Firefox 19+
+::-moz-placeholder{ color: $global-placeholder; opacity: 1; }
+// Internet Explorer 10+
+:-ms-input-placeholder{ color: $global-placeholder !important; }
+//去掉ie文本框的叉叉和密码输入框的眼睛图标（兼容模式不管用）
+::-ms-clear, ::-ms-reveal{ display: none; }
+.clearfix{
+  &:after{
+    @include clear();
+  }
+}
+table{ border-collapse: collapse; border-spacing: 0; width: 100%; }
+.container{ margin: 0 auto; position: relative; font-size: 14px; }
+.border{ background: #fff; margin-bottom: px(30); border-top: 1px solid $border; border-bottom: 1px solid $border; padding: 0 px(30); box-sizing: border-box; }
+
+
+

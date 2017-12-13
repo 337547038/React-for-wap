@@ -1,0 +1,24 @@
+@charset "utf-8";
+@import "../_config";
+.btn{ width: px(250); @include height(88); border-radius: 8px; font-size: 16px; color: #fff; display: inline-block; vertical-align: middle; text-align: center; border: 0; cursor: pointer; box-sizing: border-box;
+  @at-root{
+    input.btn{ line-height: 100%; }
+    .btn-confirm{ background: $color-yellow;
+      &:visited{ }
+      &:hover{ }
+    }
+    .btn-cancel{ background: #999;
+      &:visited{ }
+      &:hover{ }
+    }
+    .btn-disabled{ background: $color-gray; cursor: not-allowed;
+      &:visited{ }
+      &:hover{ }
+    }
+    .btn-block{ width: 100%; display: block;
+      &:visited{ }
+      &:hover{ }
+    }
+  }
+}
+

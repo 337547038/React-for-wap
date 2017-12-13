@@ -1,0 +1,15 @@
+@charset "utf-8";
+@import "../_config";
+html, body{ height: 100%; width: 100%; overflow: hidden; }
+#wrapper{ bottom: 0; left: 0; overflow: hidden; position: absolute; top: 0; width: 100%; z-index: 1; }
+//*对于scroll的滚动区域小于包裹容器的，iscroll禁止滚动，会造成无法实现下拉刷新，这里有一个小技巧，就是给滚动区域加一个min-height:101%;*/
+#wrapper > div{ }
+//*添加松开手前的不同样式*/
+.dj-loading{
+  &.down .dj-loading-inner{
+    &:before{ content: '↑'; border: transparent; animation: none; -webkit-animation: none; font-size: 20px; }
+  }
+  &.up .dj-loading-inner{
+    &:before{ content: '↓'; border: transparent; animation: none; -webkit-animation: none; font-size: 20px; }
+  }
+}

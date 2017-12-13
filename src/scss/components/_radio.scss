@@ -1,0 +1,26 @@
+@charset "utf-8";
+@import "../_config";
+.ucs-radio{
+  $border: #666; //边框颜色
+  $checked: #f60; //选中颜色
+  $disabled: #999; //禁用颜色
+  $radius: 10px; //圆宽高
+  $wh: 6px; //圆点宽高
+  display: inline-block; vertical-align: middle;
+  span{ display: inline-block; vertical-align: middle; }
+  .radio-input{ display: none;
+    &:checked + .radio-inner{ border: 1px solid $checked; cursor: pointer;
+      &:after{ opacity: 1; transform: scale(1); background: $checked }
+    }
+    &:disabled + .radio-inner{ border: 1px solid $disabled; cursor: not-allowed;
+      &:after{ opacity: 1; transform: scale(1); background: $disabled }
+    }
+  }
+  .radio-inner{ border: 1px solid $border; width: $radius; height: $radius; margin-right: 5px; border-radius: 50%; position: relative; text-align: center;
+    &:after{ content: ' '; display: block; width: $wh; height: $wh; border-radius: 50%; opacity: 0; position: absolute; left: 50%; top: 50%; margin-left: - $wh/2; margin-top: - $wh/2; transition: all .5s; transform: scale(0); }
+  }
+  .radio-text{ }
+}
+.radio-group{
+  .ucs-radio{ margin-right: px(20) }
+}

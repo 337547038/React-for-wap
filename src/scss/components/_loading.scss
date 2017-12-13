@@ -1,0 +1,26 @@
+@charset "utf-8";
+@import "../_config";
+.ucs-loading{text-align: center; vertical-align: middle; position: absolute;width: 100%;
+  .dj-loading-inner{ line-height: 15px;
+    &:before{ content: ''; display: inline-block; width: 15px; height: 15px; border: 2px solid rgba(0, 0, 0, .5); border-radius: 100%; border-bottom-color: transparent; vertical-align: middle; -webkit-animation: loadingrotate 0.75s linear infinite; animation: loadingrotate 0.75s linear infinite; margin: 0 5px; }
+  }
+  &.mask{ position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 90; background-color: transparent;
+    .ucs-loading-inner{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, .5); border-radius: 6px; width: 140px; height: 25px; padding: 23px 0; color: #fff;
+      &:before{ border-color: #fff; border-bottom-color: transparent; width: 25px; height: 25px; }
+    }
+  }
+  &.display{ display: none }
+  @at-root{
+    @keyframes loadingrotate{
+      0%{
+        transform: rotate(0deg);
+      }
+      50%{
+        transform: rotate(180deg);
+      }
+      100%{
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
